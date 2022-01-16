@@ -29,7 +29,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          tags: bzrk/php-7.4:latest
+          tags: bzrk/php-cli:7.4
           file: DockerfilePHP
           push: true
           build-args: |
