@@ -1,0 +1,11 @@
+ARG PHP_VERSION
+FROM php:${PHP_VERSION} AS prod
+
+RUN apt -y update && \
+    apt -y install git zip
+
+FROM prod AS dev
+
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php --install-dir=/usr/bin --filename=composer && \
+    php -r "unlink('composer-setup.php');"
