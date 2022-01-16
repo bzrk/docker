@@ -31,5 +31,6 @@ jobs:
         with:
           tags: bzrk/php-7.4:latest
           file: DockerfilePHP
+          push: true
           build-args: |
             PHP_VERSION=7.4-cli
